@@ -33,8 +33,6 @@ Manufacturer: Cisco
 
 - one device will not have ip addresses (ARP)
 - one device device will be private (ARP)
-- mac address format XX:XX:XX:XX:XX:XX
-
 
 ================================================================================
 
