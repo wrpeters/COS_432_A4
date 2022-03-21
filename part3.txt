@@ -5,6 +5,7 @@ Part 3: Penetration Testing
 
 1. How many possible Wi-Fi passwords are there that fulfills the password format?
 
+2 * (26 + 26 + 10)^3 = 2 * (62)^3 passwords
 
 ================================================================================
 
