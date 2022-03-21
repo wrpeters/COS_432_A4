@@ -11,6 +11,8 @@ Part 3: Penetration Testing
 
 2. What is that actual Wi-Fi password used? How did you obtain that password?
 
+cos432-h4Z
+
 
 ================================================================================
 
