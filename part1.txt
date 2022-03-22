@@ -41,7 +41,7 @@ Manufacturer: Cisco
 
 a. What is the DNS hostname of the server it connects to?
 
-XS4ALL
+ftp.mirror.nl
 
 b. Is the connection using Active or Passive FTP?
 
@@ -49,11 +49,12 @@ Active FTP
 
 c. Based on the packet capture, what is one major vulnerability of the FTP protocol?
 
-Can see the user’s username and password?
+A packet capture on the FTP protocol allows for a user's username and password to be easily observed. For example, this user attempted to login with
+username "laticia.langhans" and password "goblue3859".
 
 d. Name at least two network protocols that can be used in place of FTP to provide secure file transfer. Use the associated acronyms.
 
-TCP, HTTPS?
+Alternatives include File Transfer Protocol with SSL/TLS (or FTPS) or SSH File Transfer Protocol (or SFTP).
 
 ================================================================================
 
