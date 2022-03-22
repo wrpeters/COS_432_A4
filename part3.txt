@@ -24,6 +24,12 @@ with a dictionary of possible passwords as well as a packet capture of the netwo
 a. What are their IP addresses, respectively? (If a machine has multiple interfaces, report all IP addresses.) How did you get these addresses?
 
 
+MAC: 02:9a:7a:13:95:18
+
+02:0d:e5:6c:0d:2c
+
+02:ba:31:3d:c0:2a
+
 b. What services are currently running on these machines respectively? On which port is each service running? How did you obtain this information?
 
 
