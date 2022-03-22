@@ -5,7 +5,7 @@ Part 3: Penetration Testing
 
 1. How many possible Wi-Fi passwords are there that fulfills the password format?
 
-2 * (26 + 26 + 10)^3 = 2 * (62)^3 passwords
+2 * (26 + 26 + 10)^3 = 2 * (62)^3 = 476,656 passwords
 
 ================================================================================
 
@@ -13,6 +13,9 @@ Part 3: Penetration Testing
 
 cos432-h4Z
 
+Due to how WPA security exchanges cryptographic information during a handshake, this data can be enough to verify a password when observed.
+This leaves WPA security vulnerable to a dictionary attack given that the password is contained in the dictionary. Using aircrack-ng combined
+with a dictionary of possible passwords as well as a packet capture of the network, we were able to crack the password using a dictionary attack.
 
 ================================================================================
 
