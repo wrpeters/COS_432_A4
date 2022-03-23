@@ -78,6 +78,18 @@ Using nmap on the mainframe IP address revealed a mysterious port 234 with an un
 
 a. What does the unencrypted conversation say? Please paste it here and briefly describe how you found and obtained the content.
 
+Alice:  I heard you got a job at that terrible company...
+Bob:    Yeah. I may be sacrificing my morals and dignity, but they pay well.
+Alice:  No one will ever take you seriously again.
+Bob:    What's that? I can't hear you.
+Bob:    I'm listening to Spotify *Premium* through my *Airpods*.
+Alice:  You're disgusting. Anyway, make sure to encrypt all of our communications.
+Bob:    Of course! I found this guide that said to use a one time pad.
+Alice:  What do you think they mean by one time?
+Bob:    No idea! Hopefully nothing important.
+
+In the SketchyCorp network I first used the ls -a command to reveal all hidden folders which revealed to me the .ssh folder.
+
 b. (extra credit) Can you decrypt the encrypted messages? If so, what does the plaintext say? Describe how you determined the plaintext contents of the encrypted messages.
 
 
