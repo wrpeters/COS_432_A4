@@ -93,7 +93,6 @@ In the SketchyCorp network I first used the ls -a command to reveal all hidden f
 b. (extra credit) Can you decrypt the encrypted messages? If so, what does the plaintext say? Describe how you determined the plaintext contents of the encrypted messages.
 
 Alice: Why don't you listen to this with your airpods: http://bit.do/CribDragging. Soon everyone will know you were on 4chan in 2007.
-
 Bob: I'm so sorry for being so obnoxious last time. Please don't hold it against me or tell anyone my secret. You could get me fired!
 
 The conversation.txt file convo gave the hint that Bob encrypted the messages with a one time pad. From lecture, we learned that XORing 2 encrypted messages both obtained via a one-time pad could then reveal the XORing of the 2 original messages. Googling decryption methods for a 1 time pad revealed to us the crib dragging technique. Using this online crib dragging tool (https://toolbox.lotusfa.com/crib_drag/) we were able to piece together both Alice and Bob's secret messages by repeatedly guessing parts of each message and then building off of what previous guesses revealed.
