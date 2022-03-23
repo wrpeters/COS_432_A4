@@ -88,9 +88,8 @@ Bob:    Of course! I found this guide that said to use a one time pad.
 Alice:  What do you think they mean by one time?
 Bob:    No idea! Hopefully nothing important.
 
-In the SketchyCorp network I first used the ls -a command to reveal all hidden folders which revealed to me the .ssh folder.
+In the SketchyCorp network I first used the ls -a command to reveal all hidden folders which revealed to me the .ssh folder. This folder contained both bobs pubic and private key. I changed the permissions of the private key using chmod 600 and was then able to use this key to ssh into Bob's employee IP address using ssh -i bob.pem bob@18.223.158.90. Inside this network I found alice.enc, bob.enc and conversation.txt which contained the above convo.
 
 b. (extra credit) Can you decrypt the encrypted messages? If so, what does the plaintext say? Describe how you determined the plaintext contents of the encrypted messages.
-
 
 ================================================================================
