@@ -21,12 +21,12 @@ MAC Address: a4:2b:8c:f6:eb:81
 Manufacturer: Netgear
 
 Device 4
-IP Address: 192.168.1.1 (unsure)
+IP Address: 
 MAC Address: 00:12:17:31:10:7c
 Manufacturer: Cisco
 
 Device 5
-IP Address: 67.194.192.1 (unsure)
+IP Address: 
 MAC Address: 00:1f:6d:e8:18:00
 Manufacturer: Cisco
 
@@ -118,7 +118,5 @@ An attacker could copy and paste this cookie information when making a request t
 c. How can users protect themselves against this type of attack?
 
 d. What did the user do while on the Facebook site?
-
-View posts, make a post, use messenger?
 
 ================================================================================
