@@ -16,8 +16,8 @@ IP Address: 10.0.2.191
 MAC Address: 00:1e:8c:ea:1a:b4
 Manufacturer: ASUSTeK Computer, Inc.
 
-Device 3 192.168.1.112
-IP Address: 23.63.194.110
+Device 3
+IP Address: 10.0.2.1
 MAC Address: a4:2b:8c:f6:eb:81
 Manufacturer: Netgear
 
@@ -45,7 +45,7 @@ work related websites being visited which is not the case for this packet captur
 
 a. What is the DNS hostname of the server it connects to?
 
-ftp.mirror.nl
+dl.xs4all.nl
 
 b. Is the connection using Active or Passive FTP?
 
