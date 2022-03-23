@@ -3,7 +3,8 @@ Part 1: Exploring Network Traces
 
 ================================================================================
 
-1. There are no more than five devices actively communicating on the local area network. What are their MAC and IP addresses? Who manufactured these devices?
+1. There are no more than five devices actively communicating on the local area network. What are their MAC and IP addresses? Who manufactured these
+devices?
 
 Device 1 
 IP Address: 10.0.2.231
@@ -34,7 +35,9 @@ Manufacturer: Cisco
 
 2. What type of network does this appear to be (e.g., a large corporation, an ISP back- bone, etc.)? Point to evidence from the trace that supports this.
 
-Based on DNS traffic to websites like Dropbox, NY Times, Facebook, Twitter, USA Today, LinkedIn etc it seems like this is a personal home network for a particular user. This user is clearly using the network for personal/leisure activities. This is opposed to a more corporate network which would have more work related websites being visited which is not the case for this packet capture.
+Based on DNS traffic to websites like Dropbox, NY Times, Facebook, Twitter, USA Today, LinkedIn etc it seems like this is a personal home network for a
+particular user. This user is clearly using the network for personal/leisure activities. This is opposed to a more corporate network which would have more
+work related websites being visited which is not the case for this packet capture.
 
 ================================================================================
 
@@ -59,7 +62,8 @@ Alternatives include File Transfer Protocol with SSL/TLS (or FTPS) or SSH File T
 
 ================================================================================
 
-4. The trace shows that at least one of the clients makes HTTPS connections to sites other than Facebook. Pick one of these connections and answer the following:
+4. The trace shows that at least one of the clients makes HTTPS connections to sites other than Facebook. Pick one of these connections and answer the
+following:
 
 a. What is the domain name of the site the client is connecting to?
 
@@ -68,9 +72,11 @@ clients4.google.com
 b. Is there any way the HTTPS server can protect against the leak of information in (a)? If yes, explain why. If no, explain why not.
 
 No. The client must know the name of the server it is connecting to. This information can therefore not be hidden and as a result cannot be prevented from
-being leaked. Even if it was encrypted, an attacker could use a timing attack to see what DNS protocol packets were sent around the target HTTPS connection.
+being leaked. Even if it was encrypted, an attacker could use a timing attack to see what DNS protocol packets were sent around the target HTTPS
+connection.
 
-c. During the TLS handshake, the client provides a list of supported cipher suites. List the first three cipher suites and name the cryptographic algorithms used in each.
+c. During the TLS handshake, the client provides a list of supported cipher suites. List the first three cipher suites and name the cryptographic
+algorithms used in each.
 
 TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:
 - Elliptic Curve Diffie-Hellman Ephemeral (ECDHE)
@@ -111,7 +117,8 @@ TLS_ECDHE_RSA_WITH_RC4_128_SHA
 a. Even though logins are processed over HTTPS, what is insecure about the way the browser is authenticated to Facebook?
 
 One insecure way the browser is authenticated to Facebook is through cookies which are easily observable on Wireshark if a packet capture is obtained. For
-example, when the user visits the Facebook homepage a lot of sensitive information is available to see via cookies such as the c_user cookie which relates to the user's user_id.
+example, when the user visits the Facebook homepage a lot of sensitive information is available to see via cookies such as the c_user cookie which relates
+to the user's user_id.
 
 b. How would this let an attacker impersonate the user on Facebook?
 
@@ -119,10 +126,13 @@ An attacker could copy and paste this cookie information when making a request t
 
 c. How can users protect themselves against this type of attack?
 
-A user can protect themselves from this type of attack by sacrificing convenience and either blocking cookies or clearing them regularly. Another option is to encrypt the cookies and keep them from being exposed through plaintext. This can be done by using something like SSL to encrpyt the cookie information.
+A user can protect themselves from this type of attack by sacrificing convenience and either blocking cookies or clearing them regularly. Another option
+is to encrypt the cookies and keep them from being exposed through plaintext. This can be done by using something like SSL to encrpyt the cookie
+information.
 
 d. What did the user do while on the Facebook site?
 
-It seems like the user started off by browsing the homepage and looking at a few articles and even liking a post. They also seem to have explored their recommendations. Finally, they seem to have explored some profile pages and even used a bit of messaging as well.
+It seems like the user started off by browsing the homepage and looking at a few articles and even liking a post. They also seem to have explored their
+recommendations. Finally, they seem to have explored some profile pages and even used a bit of messaging as well.
 
 ================================================================================
