@@ -109,11 +109,11 @@ TLS_ECDHE_RSA_WITH_RC4_128_SHA (0xc011)
 
 a. Even though logins are processed over HTTPS, what is insecure about the way the browser is authenticated to Facebook?
 
-Random byte is visible?
+One insecure way the browser is authenticated to Facebook is through cookies which are easily observable on Wireshark if a packet capture is obtained. For example, when the user visits the Facebook homepage a lot of sensitive information is available to see via cookies such as the c_user cookie which relates to the user's user_id.
 
 b. How would this let an attacker impersonate the user on Facebook?
 
-Can recreate keys for key exchange?
+An attacker could copy and paste this cookie information when making a request to go to Facebook and get logged into the user's account.
 
 c. How can users protect themselves against this type of attack?
 
