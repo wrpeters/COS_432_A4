@@ -36,10 +36,14 @@ Mainframe
 MAC Address: 02:ba:31:3d:c0:2a
 IP Address: 10.0.72.245
 
-The firewall public IP address was found by entering the cracked Wi-Fi password from the previous step into the Sketchy Corp website. After ssh-ing into this network, we obtained a packet capture of the activity on the network by using tcpdump and read it using Wireshark. This allowed us to find the 3 unique MAC addresses on the network corresponding to the 3 different machines. 
+The firewall public IP address was found by entering the cracked Wi-Fi password from the previous step into the Sketchy Corp website. After ssh-ing into
+this network, we obtained a packet capture of the activity on the network by using tcpdump and read it using Wireshark. This allowed us to find the 3
+unique MAC addresses on the network corresponding to the 3 different machines. 
 
 Observing ssl and therefore Client Hello and Server Hello activity, we were able to determine that the MAC address 02:0d:e5:6c:0d:2c along with IP address 
-18.223.158.90 belonged to the employee (client) machine. The server in response was the MAC address 02:9a:7a:13:95:18 with IP address 10.0.7.36 (aka the firewall private IP address). This left the remaining MAC address along with its corresponding IP address to belong to the mainframe which made sense as this was the least active machine on the network according to the packet capture.
+18.223.158.90 belonged to the employee (client) machine. The server in response was the MAC address 02:9a:7a:13:95:18 with IP address 10.0.7.36 (aka the
+firewall private IP address). This left the remaining MAC address along with its corresponding IP address to belong to the mainframe which made sense as
+this was the least active machine on the network according to the packet capture.
 
 b. What services are currently running on these machines respectively? On which port is each service running? How did you obtain this information?
 
@@ -70,7 +74,11 @@ Christopher Eisgruber
 Donald Knuth
 Paul Nakasone
 
-Using nmap on the mainframe IP address revealed a mysterious port 234 with an unknown service. Running cd on the ssh network hinted that there was ftp protocol available on the network. Filtering for ftp protocol on the packet capture in wireshark showed Bob logging into an ftp server with his full username and password easily available. Knowing this, we ran ftp on the ssh network and opened Port 234 on address 10.0.72.245. We logged in using the credentials we observed on Wireshark and used ls to see the available files. Exploring the bob directory revealed client_list.txt which we downloaded locally using the get command after which we opened to observe the names on the list.
+Using nmap on the mainframe IP address revealed a mysterious port 234 with an unknown service. Running cd on the ssh network hinted that there was ftp
+protocol available on the network. Filtering for ftp protocol on the packet capture in wireshark showed Bob logging into an ftp server with his full 
+username and password easily available. Knowing this, we ran ftp on the ssh network and opened Port 234 on address 10.0.72.245. We logged in using the
+credentials we observed on Wireshark and used ls to see the available files. Exploring the bob directory revealed client_list.txt which we downloaded 
+locally using the get command after which we opened to observe the names on the list.
 
 ================================================================================
 
@@ -88,13 +96,19 @@ Bob:    Of course! I found this guide that said to use a one time pad.
 Alice:  What do you think they mean by one time?
 Bob:    No idea! Hopefully nothing important.
 
-In the SketchyCorp network I first used the ls -a command to reveal all hidden folders which revealed to me the .ssh folder. This folder contained both bobs pubic and private key. I changed the permissions of the private key using chmod 600 and was then able to use this key to ssh into Bob's employee IP address using ssh -i bob.pem bob@18.223.158.90. Inside this network I found alice.enc, bob.enc and conversation.txt which contained the above convo.
+In the SketchyCorp network I first used the ls -a command to reveal all hidden folders which revealed to me the .ssh folder. This folder contained both 
+bobs pubic and private key. I changed the permissions of the private key using chmod 600 and was then able to use this key to ssh into Bob's employee IP
+address using ssh -i bob.pem bob@18.223.158.90. Inside this network I found alice.enc, bob.enc and conversation.txt which contained the above convo.
 
-b. (extra credit) Can you decrypt the encrypted messages? If so, what does the plaintext say? Describe how you determined the plaintext contents of the encrypted messages.
+b. (extra credit) Can you decrypt the encrypted messages? If so, what does the plaintext say? Describe how you determined the plaintext contents of the
+encrypted messages.
 
 Alice: Why don't you listen to this with your airpods: http://bit.do/CribDragging. Soon everyone will know you were on 4chan in 2007.
 Bob: I'm so sorry for being so obnoxious last time. Please don't hold it against me or tell anyone my secret. You could get me fired!
 
-The conversation.txt file convo gave the hint that Bob encrypted the messages with a one time pad. From lecture, we learned that XORing 2 encrypted messages both obtained via a one-time pad could then reveal the XORing of the 2 original messages. Googling decryption methods for a 1 time pad revealed to us the crib dragging technique. Using this online crib dragging tool (https://toolbox.lotusfa.com/crib_drag/) we were able to piece together both Alice and Bob's secret messages by repeatedly guessing parts of each message and then building off of what previous guesses revealed.
+The conversation.txt file convo gave the hint that Bob encrypted the messages with a one time pad. From lecture, we learned that XORing 2 encrypted
+messages both obtained via a one-time pad could then reveal the XORing of the 2 original messages. Googling decryption methods for a 1 time pad revealed
+to us the crib dragging technique. Using this online crib dragging tool (https://toolbox.lotusfa.com/crib_drag/) we were able to piece together both Alice
+and Bob's secret messages by repeatedly guessing parts of each message and then building off of what previous guesses revealed.
 
 ================================================================================
